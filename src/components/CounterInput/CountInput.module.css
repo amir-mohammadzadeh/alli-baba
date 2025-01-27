@@ -1,0 +1,63 @@
+.counter {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.5em;
+    line-height: 1.85;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    user-select: none;
+}
+
+.button {
+    background-color: #e2e8f0;
+    color: #64748b;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:first-child:hover {
+    background-color: #d0ffe0;
+    color: #032f13;
+}
+
+.button:first-child:active {
+    background-color: #4ade80;
+}
+
+.button:last-child:hover {
+    background-color: #fca5a5;
+    color: #2b0202;
+}
+
+.button:last-child:active {
+    background-color: #ef4444;
+}
+
+.result {
+    direction: ltr;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    padding: .1em .4em;
+    font-size: .8em;
+    border: 0;
+    text-align: center;
+    background-color: transparent;
+    color: #000000;
+}
+
+.counter input[type='number']::-webkit-inner-spin-button,
+.counter input[type='number']::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

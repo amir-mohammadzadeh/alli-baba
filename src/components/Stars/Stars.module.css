@@ -1,0 +1,24 @@
+.star_box {
+    --icon-rote: rotateY(0);
+    direction: ltr;
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    color: #94a3b8;
+}
+
+.star_icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #e8d208;
+    transform: var(--icon-rote);
+}
+
+.star_icon--empty {
+    color: #b8c3d2;
+}
+
+:root[lang="fa"] .star_box {
+    flex-direction: row-reverse;
+    --icon-rote: rotateY(180deg);
+}

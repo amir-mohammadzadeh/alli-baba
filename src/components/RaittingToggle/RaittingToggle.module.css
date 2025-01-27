@@ -1,0 +1,35 @@
+.star_box{
+    display: flex;
+    gap: .25em;
+    direction: ltr;
+    justify-content: center;
+}
+
+.star{
+    color: var(--text-dark);
+    cursor: pointer;
+    font-size: 3rem;
+
+}
+
+.active{
+    color: var(--yellow);
+    animation: raitting-animation .5s forwards;
+}
+
+.star:hover,
+.star:has( ~ .star:hover){
+    color: var(--yellow );
+}
+@keyframes raitting-animation {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        scale: 1.5;
+    }
+    100%{
+        scale: 1;
+        transform: rotate(360deg);
+    }
+}

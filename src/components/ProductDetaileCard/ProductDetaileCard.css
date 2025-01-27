@@ -1,0 +1,243 @@
+.detaile-card_07 {
+    background-color: var(--panel-1);
+    padding: 1rem;
+    border-radius: .25rem;
+    box-shadow: var(--panel-shadow);
+    color: var(--text-dark);
+}
+
+.card-content_07 {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.image-content_07 {
+    flex: 1 1 40%;
+    max-width: 35rem;
+    margin-inline: auto;
+    align-self: flex-start;
+}
+
+.detailes-content_07 {
+    flex: 1 1 60%;
+}
+
+.detailes-content_07 hr {
+    margin-block: .75rem;
+    border: 0;
+    border-top: 1px solid var(--border-line);
+}
+
+.title_d07 {
+
+}
+
+.ratting-content_d07 {}
+
+.review-content_07 {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-light);
+}
+
+.ratting-content_d07 small {
+    color: var(--text-light);
+    margin-inline-end: .5rem;
+}
+
+
+.seller_07 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seller-name_07 {
+    color: var(--text-label);
+    display: flex;
+    flex-direction: column;
+}
+
+.seller-name_07 span {
+    color: var(--text-dark);
+    margin-inline-start: 1rem;
+}
+
+.msg-btn_07 {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    display: flex;
+}
+
+.msg-btn_07:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.msg-btn_07 svg {
+    margin-inline-end: .5rem;
+    transform: rotateY(180deg) translateY(-2px);
+}
+
+:root[lang="fa"] .msg-btn_07 svg {
+    transform: rotateY(0);
+}
+
+.count-content_07 {
+    color: var(--text-label);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.counter_07 {
+    width: 9rem;
+}
+
+.count-content_07 span:last-child {
+    color: var(--text-light);
+}
+
+.button-content_07 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+.buttons_07{
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-btn_07 {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn_07:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.buy-btn_07 {
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.buy-btn_07:hover {
+    background-color: var(--primary-dark);
+}
+
+.cart-btn_07 svg,
+.buy-btn_07 svg {
+    margin-inline-end: .55rem;
+    transform: translateY(-3px);
+}
+
+.sub-buttons_b07 {
+    margin-inline-start: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sub-btn_07 {
+    color: var(--text-dark);
+    transition: .3s;
+}
+
+.sub-btn_07:hover{
+    cursor: pointer;
+    color: var(--primary-dark);
+}
+
+.share-content_07{
+    margin: 1rem 1rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+.share-content_07 a{
+    filter:  saturate(20%);
+    transition: .3s;
+}
+.share-content_07 a:hover{
+    cursor: pointer;
+    filter: saturate(100%);
+    transform: translateY(-3px);
+}
+
+.refund-content_07 {
+    color: var(--text-label);
+}
+
+.img_r07 {
+    margin-inline-start: 1rem;
+}
+.img_r07 img {
+    width: 15rem;
+}
+.img_r07 a{
+    color: var(--primary) !important;
+    transition: .3s;
+    text-underline-offset: 7px;
+}
+.img_r07 a:hover{
+    color: var(--primary-dark) !important;
+    text-decoration: underline !important;
+}
+
+/*_______ Make Responcive ___________*/
+@media screen and (max-width: 998px) {
+    .card-content_07{
+        flex-direction: column;
+        gap: 2rem;
+    }
+   
+}
+@media screen and (max-width: 578px) {
+    .image-content_07{
+        width: 100%;
+    }
+
+    .sub-buttons_b07{
+        flex: 1 0 1% ;
+        gap: .5rem;
+        align-items: end;
+        padding-inline-end: .5rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .buttons_07{
+        flex-wrap: wrap;
+    }
+    .cart-btn_07,
+    .buy-btn_07{
+        flex: 1 1 10rem;
+        justify-content: center;
+    }
+}
+/*
+@media screen and (max-width: 430px) {
+    .image-content_07{
+        width: 100%;
+    }
+    .button-content_07{
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .sub-buttons_b07{
+        flex: 1 0 1% ;
+        gap: .5rem;
+        align-items: end;
+        padding-inline-end: .5rem;
+        flex-direction: column;
+    }
+}
+*/

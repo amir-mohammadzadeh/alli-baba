@@ -1,0 +1,186 @@
+.card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: .25rem;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
+    transition: .3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-1 {
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+.shadow-2 {
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-h1 {
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+.shadow-h1:hover{
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-h2 {
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+.shadow-h2:hover{
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.isEmpty{
+    color: #6b7280;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.icon{
+    line-height: 0;
+}
+
+.twitter_icon{
+    color:#06b6d4 ;
+}
+.facebook_icon{
+    color: #2D4373;
+}
+.linkedin_icon{
+    color:#0369a1 ;
+}
+.whatsapp_icon{    
+    color:#22c55e ;
+}
+.emaile_icon{
+    color:#b91c1c ;
+}
+
+
+.relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justfy-center {
+    justify-content: center;
+}
+
+.justfy-sa {
+    justify-content: space-around;
+}
+
+.justfy-sb {
+    justify-content: space-between;
+}
+
+.justfy-se {
+    justify-content: space-evenly;
+}
+
+.gap-0 {
+    gap: 0;
+}
+
+.gap-1 {
+    gap: .25rem;
+}
+
+.gap-2 {
+    gap: .5rem;
+}
+
+.gap-3 {
+    gap: .75rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-5 {
+    gap: 1.5rem;
+}
+
+.gap-6 {
+    gap: 2rem;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.px-0 {
+    padding-inline: 0;
+}
+
+.pb-1 {
+    padding-bottom: .5rem;
+}
+
+.pb-2 {
+    padding-bottom: 1rem;
+}
+
+.pb-3 {
+    padding-bottom: 1.5rem;
+}
+
+.pb-4 {
+    padding-bottom: 2rem;
+}
+
+/*_____________ SideBars open & close animation _______________*/
+@keyframes open-animation {
+    from { transform: translateX(-110%); }
+    to { transform: translateX(0); }
+  }
+  @keyframes close-animation {
+    from { transform: translateX(0); }
+    to { transform: translateX(-110%); }
+  }
+  
+  /*_____________ Modals open & close animation _______________*/
+  @keyframes modal-open {
+    from{ transform: scale(0);  }
+    to{ transform:  scale(1);  }
+  }
+  @keyframes modal-close {
+    from{ transform:  scale(1);  }
+    to{ transform: scale(0);  }
+  }

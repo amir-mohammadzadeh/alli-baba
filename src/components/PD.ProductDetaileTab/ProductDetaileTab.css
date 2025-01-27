@@ -1,0 +1,34 @@
+.tab-wrapper_09{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid var(--border-line);
+    max-width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.tab_09{
+    flex-shrink: 0;
+    color: var(--text-label);
+    padding: .5rem ;
+    border-bottom: 3px solid transparent ;
+    transition: .3s;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transform: translateY(1.5px);
+}
+
+.active-tab_09{
+    color: var(--text-dark);
+    border-color: var(--primary); 
+}
+
+.tab-content_09{
+    padding: .5rem;
+}
+
+

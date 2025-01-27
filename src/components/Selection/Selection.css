@@ -1,0 +1,172 @@
+.selection-wrapper_02 {
+    --white: #fff;
+    --button-bg: #f8fafc;
+    --label-color: #f8fafc;
+    --border: #94a3b8;
+    --border-soft: #cbd5e1;
+    --menu-bg: #f8fafc;
+    --menu-width: 200%;
+    --menu-max-height: auto;
+    --menu-pos: auto 0 auto auto;
+    --item-bg: var(--primary);
+    --item-hover: var(--primary-hov);
+    --main-height: 2rem;
+}
+
+.selection-wrapper_02 {
+    position: relative;
+    width: max-content;
+    padding-bottom: 1.15rem;
+    z-index: 5;
+    user-select: none;
+    -webkit-user-select: none;
+
+}
+
+.label_02 {
+    color: var();
+    display: inline-block;
+    padding-bottom: .2rem;
+    padding-inline-start: .5rem;
+}
+
+.error_02 {
+    position: absolute;
+    font-size: .9rem;
+    bottom: 0;
+    right: .5rem;
+    color: var(--red-600);
+}
+
+.selection-wrapper_02w:has(.error_02)>.selection-head_02 {
+    border-color: var(--red-700);
+}
+
+.selection-head_02 {
+    width: 100%;
+    height: var(--main-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    padding: .5rem 1rem .5rem .5rem;
+    border-radius: .45rem;
+    border: 2px solid var(--border-soft);
+    background-color: var(--button-bg);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon_02 {
+    transition: .3s;
+    transform: translateY(3px);
+}
+
+.selection-wrapper_02:has(.menu_02) .icon_02 {
+    transform: translateY(50%);
+    opacity: .5;
+
+}
+
+.menu_02 {
+    position: absolute;
+    inset: var(--menu-pos);
+    margin-top: 2px;
+    width: var(--menu-width);
+    padding: .5rem 0;
+    border-radius: .25rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 8px _02px var(--shadow-color-3);
+    animation: .3s dd-open_a1 normal;
+    transform-origin: top;
+}
+
+.options_02 {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    overflow-y: auto;
+    max-height: var(--menu-max-height);
+    scrollbar-width: none;
+}
+
+.options_02::-webkit-scrollbar {
+    width: 0;
+}
+
+.option_02:hover {
+    background-color: var(--primary-hov);
+}
+
+.option_02 {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    gap: .75rem;
+    padding: 0 .5rem;
+    transition: .3s;
+    color: #74788D;
+}
+
+.option-IS_02 {
+    padding-inline-end: .75rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.option_02:hover {
+    cursor: pointer;
+    background-color: var(--item-hover);
+    padding-inline-start: .75rem;
+    color: #1e1f23;
+}
+
+.opt-icon_02 {
+    max-width: 2rem;
+}
+
+.opt-icon_02 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.first-opt {
+    opacity: .8;
+}
+
+.selection-head_02>.option_02:hover {
+    background-color: unset;
+    padding-inline-start: .5rem;
+}
+
+.search-box_02 {
+    width: 95%;
+    margin-inline: auto;
+    margin-bottom: .25rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.search-input_02 {
+    padding-bottom: .5rem;
+}
+
+@keyframes dd-open_a1 {
+    from {
+        transform: rotateX(90deg);
+        width: 100%;
+    }
+
+    to {
+        transform: rotateX(0deg);
+        width: var(--menu-width);
+    }
+}
+
+@media screen and (max-width:568px) {
+    .selection-head_02 {
+        height: 3rem;
+    }
+}

@@ -1,0 +1,79 @@
+.input-box_15{
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: .25rem;
+    padding-bottom: 1.25rem;
+}
+
+.input-box_15 textarea,
+.input-box_15 input{
+    width: 100%;
+    padding: .35rem .5rem;
+    font-size: 1.1rem;
+    font-family: var(--main-font);
+    border: 2px solid var(--border-light);
+    border-radius: .5rem;
+    color: var(--text-dark); 
+    transition: .3s;
+}
+
+.input-box_15 textarea{
+    resize: none;
+    height: 100%;
+}
+
+.input-box_15 textarea::placeholder,
+.input-box_15 input::placeholder{
+    font-size: .95rem;
+}
+
+.input-box_15 label{
+    padding-inline: .75rem ;
+    color: var(--text-label);
+    transition: .3s;
+    cursor: pointer;
+    width: max-content;
+}
+.input-box_15:has(.error_15) textarea:focus,
+.input-box_15:has(.error_15) input:focus,
+.input-box_15 textarea:focus,
+.input-box_15 input:focus{
+    border-color: var(--border);
+}
+/*
+.input-box_15 textarea:not(:empty) ,
+.input-box_15 input:not([value = '']) {
+    border-color: var(--green-700 );
+}*/
+
+.input-box_15 input:focus ~ label{
+    color: var(--text-dark);
+}
+
+.input-box_15 input[type='number']::-webkit-inner-spin-button,
+.input-box_15 input[type='number']::-webkit-outer-spin-button{
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.input-box_15:has(.error_15) textarea ,
+.input-box_15:has(.error_15) input {
+    border-color: var(--red);
+}
+
+.error_15{
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    color: var(--red);
+    font-size: .9rem;
+    line-height: 1.25;
+}
+
+@media screen and (max-width:568px) {
+    .input-box_15 input{
+        height: 3rem;
+    }
+}

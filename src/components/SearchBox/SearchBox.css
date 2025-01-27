@@ -1,0 +1,207 @@
+.search-box_03 {
+    position: relative;
+    width: 25rem;
+    margin-inline: auto;
+    z-index: 5;
+    background-color: var(--white);
+}
+
+.back-btn_03 {
+    display: none;
+}
+
+.search-input_03 {
+    direction: rtl;
+    height: 100%;
+    background-color: inherit;
+    display: flex;
+}
+
+.search-input_03 input {
+    flex-grow: 1;
+    height: 100%;
+    padding: .25rem .5rem;
+    font-size: 1rem;
+    background-color: inherit;
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+    border-right: 0;
+    border-radius: .25rem 0 0 .25rem;
+    transition: .3s;
+}
+
+.search-input_03 input:focus {
+    border-color: var(--border);
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.search-input_03 input::placeholder {
+    font-size: .8rem;
+}
+
+.icon_s03 {
+    flex-shrink: 0;
+    background-color: var(--primary);
+    color: var(--white);
+    width: 4rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 0 .25rem .25rem 0;
+    transition: .3s;
+    border: 1px solid var(--primary-dark);
+    border-left: 0;
+}
+
+.icon_s03:hover {
+    cursor: pointer;
+    background-color: var(--primary-dark);
+}
+
+:root[lang="fa"] .search-input_03 input::placeholder {
+    text-align: end;
+}
+
+
+.result-content_03 {
+    background-color: var(--white);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 1px);
+    width: 100%;
+    padding-bottom: .5rem;
+    border-radius: .25rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px 1px var(--shadow-color-1);
+    transition: .3s;
+    transform-origin: top;
+    overflow: hidden;
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+}
+
+.open_r03 {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.hedding-r03 {
+    font-size: .8rem;
+    background-color: var(--panel-2);
+    padding: .2rem 1rem;
+    margin-bottom: .5rem;
+}
+
+.result-content_03 ul {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-height: 15rem;
+    overflow-y: auto;
+}
+
+.result_r03 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .5rem;
+    place-items: center start;
+    transition: .3s;
+    border-radius: .25rem;
+    overflow: hidden;
+}
+
+.result_r03:hover {
+    cursor: pointer;
+    background-color: #f5f8fa;
+}
+
+.image_r03 {
+    grid-row: 2 span;
+    width: 4rem;
+    height: 4rem;
+}
+
+.image_r03 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title_r03 {
+    height: 1.5rem;
+}
+
+.price_r03 {
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+/***************************************/
+
+:root[lang="fa"] .search-input_03 {
+    flex-direction: row-reverse;
+}
+
+:root[lang="fa"] .search-input_03 input{
+    border-radius: 0 .25rem .25rem 0;
+    border-right: 1px solid var(--border-light);
+    border-left: 0;
+}
+:root[lang="fa"] .search-input_03 input:focus{
+    border-color: var(--border);
+    border-radius:  0 .5rem .5rem 0;
+}
+:root[lang="fa"] .search-input_03 .icon_s03{
+    border-radius:  .25rem 0 0 .25rem ;
+    border-left: 1px solid var(--primary-dark);
+    border-right: 0;
+}
+
+:root[lang="fa"] .search-input_03 input::placeholder {
+    text-align: end;
+}
+
+/*_________ Make Responcive _________*/
+@media screen and (max-width: 768px) {
+    
+    .search-input_03 input{
+        width: 0;
+        flex: 0 0 0;
+        visibility: hidden;
+    }
+    .search-input_03 .icon_s03{
+        width: auto;
+        aspect-ratio: 1;
+        background-color: transparent;
+        border-color: transparent;
+        color: var(--text-light);
+    }
+    :root[lang="fa"] .search-input_03 .icon_s03{
+        border-left: 1px solid transparent;
+    }
+    .search-input_03 .icon_s03:hover{
+        color: var(--text-dark);
+    }
+/*
+    .search-box_03{
+        position: absolute;
+        width: 90%;
+        max-width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 2;
+    }
+
+    
+    .openmobil{
+
+    }
+    .openmobil .search-input_03 input{
+        width: auto;
+        flex: 1 1 1%;
+        visibility: visible;
+    }*/
+}

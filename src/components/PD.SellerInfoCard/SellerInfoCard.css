@@ -1,0 +1,80 @@
+.seller-info-card_08{
+    position: relative;
+    background-color: var(--panel-1);
+    border-radius: .25rem;
+    box-shadow: var(--panel-shadow);
+}
+.header_08{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.header_08 small{
+    border-bottom: 1px solid var(--border-line);
+    color: var(--text-label);
+}
+.icon_h08{
+    position: absolute;
+    top: .25rem;
+    right: 0;
+    width: 3rem;
+    background-color: var(--panel-1);
+}
+.icon_h08 img{
+    width: 100%;
+    object-fit: cover;
+}
+.rate-box_08{
+    border: 1px solid var(--border-light);
+    margin: 0 1rem;
+    padding: .5rem;
+    border-radius: .25rem;
+    text-align: center;
+    color: var(--text-light);
+}
+.footer_08{
+    margin-top: .5rem;
+    padding: .5rem 0rem;
+    border-top: 1px solid var(--border-line);
+    position: relative;
+}
+
+.store-link_08{
+    display: block;
+    width: max-content;
+    background-color: var(--primary-light);
+    color: var(--primary-dark) !important;
+    border-radius: 0 .5rem .5rem 0;
+}
+.store-link_08:hover{
+    background-color: var(--primary);
+    color: var(--white)!important;
+}
+
+
+.sosials_08{
+    padding-inline-end: 1rem;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: end;
+    gap: .5rem ;
+}
+.sosials_08 a:hover{
+    transition: .3s;
+    transform: translateY(-5px);
+}
+
+:root[lang="fa"] .icon_h08{
+    left: 0;
+    right: auto;
+}
+
+:root[lang="fa"] .store-link_08{
+    border-radius: .5rem 0 0 .5rem;
+}
+
+/*_______ Make Responcive ___________*/
+@media screen and (max-width: 998px) {
+  
+}
+

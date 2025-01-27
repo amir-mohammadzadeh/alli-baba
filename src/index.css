@@ -1,0 +1,181 @@
+@import url(./Normalize.css);
+
+@font-face {
+  font-family: vazir;
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url('static/fonts/Vazir.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+    url('static/fonts/Vazir.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('static/fonts/Vazir.ttf') format('truetype');
+}
+
+
+:root {
+  --black: #02000c;
+  --white: #ffffff;
+  --body-bg: #F2F3F8;
+  --body-color: #1b1b28;
+  --footer-bg: #111723;
+  --panel-1: #FFFFFF;
+  --panel-2: #DEE2E6;
+  --primary: #FF7300;
+  --primary-light: #ff730040;
+  --primary-dark: #D04A0A;
+  --border: #475569;
+  --border-light: #cbd5e1;
+  --border-line: #d1d5db;
+  --text-dark: #020617;
+  --text-light: #64748b;
+  --text-label: #475569;
+  --text-dark-2: #6b7280;
+  --shadow-color-1: #00000030;
+  --shadow-color-2: #00000050;
+  --shadow-color-3: #0000001a;
+  --shadow-1: 0 0 10px 0 #00000030;
+  --panel-shadow: 0 0 15px 2px #0000001a;
+
+  --blue: #0b44e0;
+  --blue-dark: #1e3a8a;
+  --blue-light: #0ea5e9;
+  --red: #ec1111;
+  --red-dark: #991b1b;
+  --red-light: #f87171;
+  --yellow: #facc15;
+  --yellow-dark: #ca8a04;
+  --yellow-light: #facc1553;
+
+  --main-font: vazir, sans-serif;
+}
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #7c2d12;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+body {
+  font-family: var(--main-font);
+  direction: ltr;
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  margin: 0;
+}
+
+:root[lang="fa"] body {
+  direction: rtl;
+}
+
+#root {
+  width: 100vw;
+}
+
+.container {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: .25rem 3rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .container {
+    max-width: 70rem;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  .container {
+    max-width: 60rem;
+    padding-inline: 2rem;
+  }
+
+  html {
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 50rem;
+  }
+}
+
+.btn {
+  height: 2.25rem;
+  min-width: max-content;
+  padding: .4rem 1rem;
+  font-size: 1rem;
+  border-radius: .4rem;
+  border: 1px solid transparent;
+  transition: .3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  width: 0;
+  height: 0;
+}
+
+/*_____________ Limited text lines _______________*/
+.line-limit-1 {
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.line-limit-2 {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.line-limit-2,
+.line-limit-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

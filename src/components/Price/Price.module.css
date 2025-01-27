@@ -1,0 +1,25 @@
+.price-content {
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.75rem;
+}
+
+.price {
+    color: var(--primary);
+    font-size: 1em;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.price sub {
+    color: var(--text-light);
+    font-weight: normal;
+    font-size: .7em;
+    margin-inline-start: .5rem;
+}
+
+:root[lang="fa"] .price {
+    direction: rtl;
+}

@@ -1,0 +1,116 @@
+.home-content_1 {
+    margin-block: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.cate-slider_1{
+    position: relative;
+    display: grid;
+    grid-template-areas: "category banner""category today-deal";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+.category-area_1{
+    grid-area: category;
+    width: 20rem;
+}
+.slider-area_1{
+    grid-area: banner;
+    border-radius: .75rem;
+    overflow: hidden;
+}
+.slider-area_1 img{
+    border-radius: .75rem;
+}
+
+.today-deal-area_1{
+    grid-area: today-deal;
+}
+
+/*****************************************************/
+.product-slider_1{
+    padding: .5rem 0;
+}
+
+.slider-section_1{
+    background-color: var(--white);
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+.header-btn_ss1{
+    background-color: var(--primary);
+    margin-bottom: .25rem;
+    border-radius: .25rem;
+    color: var(--white);
+}
+.header-btn_ss1:hover{
+    background-color: var(--primary-dark);
+}
+
+.cate-section_1{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.cate-section-content_1{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(16.5rem , 1fr));
+    gap: 1rem;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .category_cs1{
+        width: 20.5rem;
+    }
+    .dtoday-deal_cs1{
+        width: 14rem;
+    }
+
+    .category-area_1{
+        width: 17rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .category_cs1{
+        width: 25.5rem;
+    }
+    .dtoday-deal_cs1{
+        width: 17rem;
+    }
+}
+
+@media screen and (max-width: 998px) {
+    .category-area_1{
+        display: none;
+    }
+
+    .cate-slider_1{
+        flex-direction: column;
+        height: auto;
+        gap: 2.5rem;
+    }
+    
+    .fav-cate_cs1,
+    .baner-cate,
+    .slider_cs1{
+        max-width: 100%;
+    }
+    .dtoday-deal_cs1{
+        height:18rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dtoday-deal_cs1{
+        height:25rem;
+        width: 100%;
+    }
+}

@@ -1,0 +1,11 @@
+.multi-slider-container {
+    direction: unset;
+    max-width: 100%;
+    --slide-height: 20rem;
+    --slide-spacing: 1rem;
+    --slide-size: 50%;
+}
+
+.multi-slider-container .embla__viewport{
+    padding: .75rem;
+}

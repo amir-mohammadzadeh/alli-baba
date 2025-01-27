@@ -1,0 +1,44 @@
+.image-content_pi2{
+
+}
+.image-content_pi2 ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(15rem , 1fr));
+    gap: 1.5rem;
+
+}
+
+.image-content_pi2 li{
+    
+}
+
+.image-content_pi2 li:hover{
+    cursor: pointer;
+
+}
+
+.image-content_pi2 li img{
+    max-width: 100%;
+    object-fit: cover;
+
+}
+
+.previrw-image_pi2{
+    width: 100%;
+    max-width: 50%;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--shadow-1);
+
+}
+.previrw-image_pi2 img{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media screen and (max-width: 998px) {
+    .image-content_pi2 ul{
+        grid-template-columns: repeat(auto-fill , minmax(10rem , 1fr));
+    }
+  }
