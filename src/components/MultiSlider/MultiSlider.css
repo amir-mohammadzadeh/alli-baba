@@ -6,6 +6,12 @@
     --slide-size: 50%;
 }
 
-.multi-slider-container .embla__viewport{
+.multi-slider-container .embla__viewport {
     padding: .75rem;
+}
+
+@media screen and (max-width: 768px) {
+    .multi-slider-container {
+        --slide-size: 90%;
+    }
 }

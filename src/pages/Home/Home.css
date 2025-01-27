@@ -68,6 +68,7 @@
     .category_cs1{
         width: 20.5rem;
     }
+    
     .dtoday-deal_cs1{
         width: 14rem;
     }
@@ -92,16 +93,12 @@
     }
 
     .cate-slider_1{
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-areas: "banner""today-deal";
         height: auto;
         gap: 2.5rem;
     }
     
-    .fav-cate_cs1,
-    .baner-cate,
-    .slider_cs1{
-        max-width: 100%;
-    }
     .dtoday-deal_cs1{
         height:18rem;
         width: 100%;

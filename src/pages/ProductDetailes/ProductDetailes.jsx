@@ -9,9 +9,13 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import MultiSlider from '../../components/MultiSlider/MultiSlider'
 import RaittingToggle from '../../components/RaittingToggle/RaittingToggle'
 import AddComment from '../../components/PD.AddComment/AddComment'
+import { useEffect } from 'react'
 
 const ProductDetailes = () => {
 
+    useEffect(() => {
+        window.scrollTo({ behavior: "instant", top: 0 })
+    }, []);
 
 
     return (<>
@@ -64,7 +68,7 @@ const ProductDetailes = () => {
 
 
                         </PanelContainer>
-                        
+
                         <PanelContainer className="multiSlider-content_2">
                             <PanelHeader
                                 headerTitle={"پر فروش ترین ها"}

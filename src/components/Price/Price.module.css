@@ -13,6 +13,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.price-content span[id="Price_Label"] {
+    font-size: 1rem;
+}
+
 .price sub {
     color: var(--text-light);
     font-weight: normal;
@@ -22,4 +26,14 @@
 
 :root[lang="fa"] .price {
     direction: rtl;
+}
+
+@media screen and (max-width: 768px) {
+    .price-content {
+        font-size: 1.3rem;
+    }
+
+    .price sub {
+        font-size: .5em;
+    }
 }
