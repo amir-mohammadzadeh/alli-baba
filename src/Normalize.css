@@ -41,33 +41,33 @@ main {
   display: block;
   margin-top: 0;
   margin-bottom: .5rem;
-  font-weight: 600;
+  font-weight: bold;
   color: inherit;
 }
 
 .h1, h1 {
-  font-size: calc(.85rem + .95vw)
+  font-size: calc(1rem + .3vw)
 }
 
 .h2, h2 {
-  font-size: calc(1.325rem + .9vw)
+  font-size: calc(1rem + .3vw)
 }
 
 .h3, h3 {
-  font-size: calc(1.3rem + .6vw)
+  font-size: calc(1rem + .3vw)
 }
 
 .h4, h4 {
-  font-size: calc(1.2rem + .3vw)
+  font-size: calc(1rem + .2vw)
 }
 
 .h5,
 h5 {
-  font-size: 1.25rem
+  font-size: 1rem
 }
 
 .h6, h6 {
-  font-size: 1rem
+  font-size: .9rem
 }
 
 p {

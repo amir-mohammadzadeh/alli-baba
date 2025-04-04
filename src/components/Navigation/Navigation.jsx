@@ -1,12 +1,15 @@
 import React from 'react'
 import './Navigation.css'// => Code 05
+import { NavLink } from 'react-router'
 
 const Navigation = () => {
     return (
         <nav className="container navbar_05">
             <ul className="nav-content_05">
                 <li className="item_n05">
-                    دسته بندی ها
+                    <NavLink to="category">
+                        دسته بندی ها
+                    </NavLink>
                 </li>
                 <li className="item_n05">
                     برند ها

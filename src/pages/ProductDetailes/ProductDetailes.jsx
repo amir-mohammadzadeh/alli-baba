@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import PanelContainer, { PanelHeader } from '../../components/PanelContainer/PanelContainer'
 import ProductDetaileTab from '../../components/PD.ProductDetaileTab/ProductDetaileTab'
 import ProductDetaileCard from '../../components/ProductDetaileCard/ProductDetaileCard'
-import './ProductDetailes.css' // Code=> 2
+import './ProductDetailes.css' // Code=> p2
 import SellerInfoCard from '../../components/PD.SellerInfoCard/SellerInfoCard'
 import TopSellingProducts from '../../components/PD.TopSellingProducts/TopSellingProducts'
 import ProductCard from '../../components/ProductCard/ProductCard'
@@ -19,12 +19,12 @@ const ProductDetailes = () => {
 
 
     return (<>
-        <main className="container product-detiles-main_2">
-            <div className="pd-content_2">
+        <main className="container product-detiles-main_p2">
+            <div className="pd-content_p2">
                 <ProductDetaileCard />
 
                 <div className="part_B2">
-                    <div className="side-panel_2">
+                    <div className="side-panel_p2">
                         <SellerInfoCard />
 
                         <PanelContainer>
@@ -38,10 +38,10 @@ const ProductDetailes = () => {
 
                         {/*<TopSellingProducts />*/}
                     </div>
-                    <div className="disc-content_2">
+                    <div className="disc-content_p2">
                         <ProductDetaileTab />
 
-                        <PanelContainer className="multiSlider-content_2">
+                        <PanelContainer className="multiSlider-content_p2">
                             <PanelHeader
                                 headerTitle={"محصولات مشابه"}
                                 headerBtn
@@ -69,7 +69,7 @@ const ProductDetailes = () => {
 
                         </PanelContainer>
 
-                        <PanelContainer className="multiSlider-content_2">
+                        <PanelContainer className="multiSlider-content_p2">
                             <PanelHeader
                                 headerTitle={"پر فروش ترین ها"}
                                 headerBtn

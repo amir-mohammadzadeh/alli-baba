@@ -6,7 +6,7 @@ import {
     usePrevNextButtons
 } from '../SliderCustomTools/SliderCustomButtons.jsx'
 
-const OPTIONS = { align: 'start', dragFree: true, direction: 'rtl' }
+const OPTIONS = { align: 'start', dragFree: true, direction: document.documentElement.lang == 'fa' ? 'rtl' : 'ltr' }
 const SLIDE_COUNT = 5
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 

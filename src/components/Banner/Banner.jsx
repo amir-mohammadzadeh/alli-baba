@@ -1,25 +1,25 @@
 import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+//import Fade from 'embla-carousel-fade'
+import { BANNER_IMG } from '../../assets/staticPaths'
 import { DotButton, useDotButton } from '../SliderCustomTools/SliderCustomDotes'
 import {
     PrevButton,
     NextButton,
     usePrevNextButtons
 } from '../SliderCustomTools/SliderCustomButtons'
-import { BANNER_IMG } from '../../assets/staticPaths'
 
-export const OPTIONS = { loop: true }
-const SLIDE_COUNT = 5
+export const OPTIONS = { loop: true, containScroll: false, direction: 'rtl' }
+const SLIDE_COUNT = 2
 export const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 const Exampel_BannerList = new Array(8).fill().map((e, i) => ({ id: `bnr:${i + 1}`, imgURL: `banner-${1}.jpg` }))
 
-const Banner = () => {
-    const BANNERS_IMG = '/public/static/images/banners/'
+const Banner = ({ className = '' }) => {
     const [slides, options] = [SLIDES, Exampel_BannerList]
-    const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
+    const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay({ stopOnMouseEnter: true, stopOnInteraction: false })])
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
 
     const onNavButtonClick = useCallback((emblaApi) => {
@@ -41,21 +41,27 @@ const Banner = () => {
 
 
     return (
-        <div className={'carousel'}>
+        <div className={'carousel ' + className}>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    <div className="carousel__item _image_ci">
-                        <img src={BANNER_IMG + "banner-1.jpg"}  alt="" />
-                    </div>
-                    <div className="carousel__item _image_ci">
-                        <img src={BANNER_IMG + "banner-2.jpg"} alt="" />
-                    </div>
+                    {slides.map(slide => <>
+                        <div className="carousel__item _image_ci">
+                            <picture>
+                                <source srcSet={BANNER_IMG + "slide-mob-01.webp"} media='(max-width: 768px)' />
+                                <img src={BANNER_IMG + "banner-1.jpg"} alt="" />
+                            </picture>
+                        </div>
+                        <div className="carousel__item _image_ci">
+                            <picture>
+                                <source srcSet={BANNER_IMG + "slide-mob-04.webp"} media='(max-width: 768px)' />
+                                <img src={BANNER_IMG + "banner-1.jpg"} alt="" />
+                            </picture>
+                        </div>
+                    </>)}
                 </div>
             </div>
 
 
-            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
             <div className="carousel__dotes">
                 {scrollSnaps.map((_, index) => (
                     <DotButton
@@ -72,3 +78,8 @@ const Banner = () => {
 }
 
 export default Banner
+
+/*
+<PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+*/

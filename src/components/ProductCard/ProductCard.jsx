@@ -25,7 +25,7 @@ const ProductCard = () => {
                     <div className="star-box_04">
                         <Stars value={2} />
                     </div>
-                    <h3 className="title_c04 line-limit-2">
+                    <h3 className="h6 title_c04 line-limit-2">
                         عنوان محصول
                     </h3>
                     <div className="point_c04">

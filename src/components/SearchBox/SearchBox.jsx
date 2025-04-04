@@ -1,40 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './SearchBox.css' //Code 03
 import { BsArrowRight, BsSearch } from 'react-icons/bs'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { PRODUCT_IMG } from '../../assets/staticPaths'
 
-const Serac = ({ className = "" }) => {
-    //const navigate = useNavigate()
-    const searchBox_ref = useRef(null)
-    const result_ref = useRef()
-    const searchInput = useRef(null)
-    let isActive = useRef(false)
-    const [results, setResultes] = useState([])
 
-    useEffect(() => {
-        searchInput.current.addEventListener('keypress', e => {
-            if (e.key === 'Enter') onSearchIconClick()
-        })
+const SearchBox = ({ className="" }) => {
 
-    }, [])
+    const navigate = useNavigate()
+    const Search_Ref = useRef(null)
+    const serachValue = useRef(null)
+    const [results, setResultes] = useState([1, 2, 3])
 
 
     const openResultBox = () => {
-        result_ref.current.classList.add('open_r03')
-        isActive.current = true;
+        Search_Ref.current.classList.add('open_r03')
+        //document.documentElement.style.overflowY = 'hidden';
     }
 
     const closeResultBox = () => {
-        searchInput.current.value = '';
-        result_ref.current.classList.remove('open_r03');
-        isActive.current = false;
+        Search_Ref.current.classList.remove('open_r03');
+        //document.documentElement.style.overflowY = 'auto';
         setResultes([])
     }
 
-    const inputChange = async (e) => {
-        const searchValue = e.target.value;
-        (!searchValue && window.innerWidth >= 768) ? closeResultBox() : openResultBox()
+    const inputChange = async (e, text) => {
+        serachValue.current = text;
+        const searchValue = text; //e.target.value;
+        !searchValue ? closeResultBox() : openResultBox()
 
         //\__________________ Searching in Products with API __________________/\\
         /*
@@ -43,134 +36,175 @@ const Serac = ({ className = "" }) => {
             const res = await useAxiosRequest('get', SEARCH_IN_PRODUCTS, q)
             setResultes(res.data)
         }
-        */
+*/
+        //const result = orginalData.filter(item => item.ProductName.includes(searchValue))
+        //searchValue ? setResultes(result) : setResultes([]);
 
     }
 
     const onSearchHandler = () => {
-        const text = searchInput.current.value
-        if (text == '') return;
-        console.log('Cliked on search result => ' + text)
-
-        //navigate('search/posters/?s=' + text, { state: text })// The link of resulte will add here ...
-        closeResultBox()
-        searchInput.current.value = ''
+        if (!serachValue.current) return;
+        navigate('/shop-search?' + serachValue.current, {
+            state: serachValue.current
+        })
+        console.log('Cliked on search result => ' + serachValue.current)
+        /*
+                navigate('search/posters/?s=' + text, { state: text })// The link of resulte will add here ...
+                closeResultBox()
+                searchInput.current.value = ''*/
     }
 
-    const onSearchIconClick = () => {
-        console.log('first')
-        window.innerWidth <= 768 ?
-            isActive.current ? onSearchHandler() : openResultBox() : onSearchHandler();
-    }
 
     const onResultItemClick = (id) => {
-        console.log(id)
-        //navigate('/pd/' + id)
+        navigate('/pd')
         closeResultBox()
     };
 
+    return (
+        <>
+            <div ref={Search_Ref} className={`search-box_03 ${className}`}>
 
+                <div className="search-input_03">
+                    <SearchInput
+                        onInputChange={inputChange}
+                        onIconClick={onSearchHandler}
+                    />
+                </div>
+
+                <ResultBox
+                    className="result-menu_03"
+                    onResultClick={onResultItemClick}
+                />
+
+            </div>
+        </>
+    )
+};
+
+export default SearchBox
+
+
+
+export const SearchInput = ({ onIconClick, onInputChange, children, ...atribiutes }) => {
+
+    const searchInput_ref = useRef(null)
+    const location = useLocation()
+
+    useEffect(() => {
+
+        //onInputChange('')
+    }, [location]);
+
+    const inputChangeHandler = (e) => {
+        const value = e.target.value;
+
+        onInputChange(e, value)
+    };
+
+    const pressEnterKeyEvent = (e) => {
+        if (e.key === 'Enter') onIconClick()
+    };
+
+    const cleanSearchInput = (e) => {
+        searchInput_ref.current.value = '';
+        e.target.style.visibility = 'hidden';
+        onInputChange('')
+    };
 
     return (<>
-        <div ref={searchBox_ref} className={`search-box_03 ${className} openmobil`}>
-            <div className="back-btn_03">
-                <BsArrowRight size={20} />
-            </div>
-
-            <div className="search-input_03">
-                <div className="icon_s03" onClick={onSearchIconClick}>
-                    <BsSearch size={20} />
-                </div>
-                <input
-                    dir='auto'
-                    type="search"
-                    ref={searchInput}
-                    placeholder='جستجو در محصولات'
-                    onChange={inputChange}
-                />
-            </div>
-
-            <div ref={result_ref} className="result-content_03">
-                <div className="hedding-r03">
-                    {[].length != 0
-                        ? <span> نتایج پیدا شده: 10</span>
-                        : <span> موردی یافت نشد </span>
-                    }
-                </div>
-                <ul className="no-scrollbar">
-
-                    <li onClick={() => onResultItemClick(1)}>
-                        <div className="result_r03">
-                            <div className="image_r03">
-                                <img src={PRODUCT_IMG +"p-1.jpeg"} alt="" />
-                            </div>
-                            <span className="title_r03 line-limit-1">
-                                عنوان محصول
-                            </span>
-                            <span className="price_r03">
-                                3201
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="result_r03">
-                            <div className="image_r03">
-                                <img src={PRODUCT_IMG +"p-2.jpeg"} alt="" />
-                            </div>
-                            <span className="title_r03 line-limit-1">
-                                عنوان محصول
-                            </span>
-                            <span className="price_r03">
-                                3201
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="result_r03">
-                            <div className="image_r03">
-                                <img src={PRODUCT_IMG +"p-2.jpeg"} alt="" />
-                            </div>
-                            <span className="title_r03 line-limit-1">
-                                عنوان محصول
-                            </span>
-                            <span className="price_r03">
-                                3201
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="result_r03">
-                            <div className="image_r03">
-                                <img src={PRODUCT_IMG +"p-1.jpeg"} alt="" />
-                            </div>
-                            <span className="title_r03 line-limit-1">
-                                عنوان محصول
-                            </span>
-                            <span className="price_r03">
-                                3201
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="result_r03">
-                            <div className="image_r03">
-                                <img src={PRODUCT_IMG +"p-2.jpeg"} alt="" />
-                            </div>
-                            <span className="title_r03 line-limit-1">
-                                عنوان محصول
-                            </span>
-                            <span className="price_r03">
-                                3201
-                            </span>
-                        </div>
-                    </li>
-
-
-                </ul>
-            </div>
-
+        <div className="icon_s03" >
+            <BsSearch size={20} />
         </div>
+        <input
+            dir='auto'
+            type="search"
+            ref={searchInput_ref}
+            placeholder='جستجو در محصولات'
+            onChange={inputChangeHandler}
+        />
+        {children}
     </>)
-}
+};
 
-export default Serac
+export const ResultBox = ({ onResultClick, className = '' }) => {
+    return (
+        <div className={"result-content_03 " + className}>
+            <div className="hedding-r03">
+                {[].length != 0
+                    ? <span> نتایج پیدا شده: 10</span>
+                    : <span> موردی یافت نشد </span>
+                }
+            </div>
+            <ul className="no-scrollbar">
+
+                <li onClick={() => onResultItemClick(1)}>
+                    <div className="result_r03">
+                        <div className="image_r03">
+                            <img src={PRODUCT_IMG + "p-1.jpeg"} alt="" />
+                        </div>
+                        <span className="title_r03 line-limit-1">
+                            عنوان محصول
+                        </span>
+                        <span className="price_r03">
+                            3201
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div className="result_r03">
+                        <div className="image_r03">
+                            <img src={PRODUCT_IMG + "p-2.jpeg"} alt="" />
+                        </div>
+                        <span className="title_r03 line-limit-1">
+                            عنوان محصول
+                        </span>
+                        <span className="price_r03">
+                            3201
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div className="result_r03">
+                        <div className="image_r03">
+                            <img src={PRODUCT_IMG + "p-2.jpeg"} alt="" />
+                        </div>
+                        <span className="title_r03 line-limit-1">
+                            عنوان محصول
+                        </span>
+                        <span className="price_r03">
+                            3201
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div className="result_r03">
+                        <div className="image_r03">
+                            <img src={PRODUCT_IMG + "p-1.jpeg"} alt="" />
+                        </div>
+                        <span className="title_r03 line-limit-1">
+                            عنوان محصول
+                        </span>
+                        <span className="price_r03">
+                            3201
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div className="result_r03">
+                        <div className="image_r03">
+                            <img src={PRODUCT_IMG + "p-2.jpeg"} alt="" />
+                        </div>
+                        <span className="title_r03 line-limit-1">
+                            عنوان محصول
+                        </span>
+                        <span className="price_r03">
+                            3201
+                        </span>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    )
+};

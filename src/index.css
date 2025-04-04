@@ -1,16 +1,5 @@
 @import url(./Normalize.css);
-
-@font-face {
-  font-family: vazir;
-  font-style: normal;
-  font-weight: bold;
-  src:
-    url('static/fonts/Vazir.woff2') format('woff2'),
-    /* FF39+,Chrome36+, Opera24+*/
-    url('static/fonts/Vazir.woff') format('woff'),
-    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url('static/fonts/Vazir.ttf') format('truetype');
-}
+@import url(./assets/Fonts.css);
 
 
 :root {
@@ -18,23 +7,34 @@
   --white: #ffffff;
   --body-bg: #F2F3F8;
   --body-color: #1b1b28;
-  --footer-bg: #111723;
+  --footer-bg: #023047;
   --panel-1: #FFFFFF;
   --panel-2: #DEE2E6;
-  --primary: #FF7300;
-  --primary-light: #ff730040;
-  --primary-dark: #D04A0A;
+  --bg-dark: #023047 ;
+
+  --primary: #fb8500;
+  --primary-light: #fb850080;
+  --primary-xlight: #fb850040;
+  --primary-dark: #fb5607;
+
+  --secondary: #ffb703;
+  --secondary-light: #ffb70380;
+  --secondary-xlight: #ffb70340;
+
   --border: #475569;
   --border-light: #cbd5e1;
-  --border-line: #d1d5db;
+  --border-line-1: #d1d5db;
+  --border-line-2: #d1d5db;
   --text-dark: #020617;
   --text-light: #64748b;
   --text-label: #475569;
   --text-dark-2: #6b7280;
+  --text-link: #219ebc;
   --shadow-color-1: #00000030;
   --shadow-color-2: #00000050;
   --shadow-color-3: #0000001a;
-  --shadow-1: 0 0 10px 0 #00000030;
+  --shadow-1: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+  --shadow-2: 2px 2px 15px 1px rgba(0, 0, 0, 0.1);
   --panel-shadow: 0 0 15px 2px #0000001a;
 
   --blue: #0b44e0;
@@ -47,7 +47,7 @@
   --yellow-dark: #ca8a04;
   --yellow-light: #facc1553;
 
-  --main-font: vazir, sans-serif;
+  --main-font: Vazir, sans-serif;
 }
 
 :root {
@@ -105,6 +105,7 @@ body {
 @media screen and (max-width: 1400px) {
   .container {
     max-width: 80rem;
+    padding: .25rem 2rem;
   }
 }
 
@@ -117,7 +118,7 @@ body {
 @media screen and (max-width: 1200px) {
 
   .container {
-    max-width: 70rem;
+    max-width: 75rem;
   }
 }
 

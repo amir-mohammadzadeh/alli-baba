@@ -26,7 +26,7 @@ export const CategoryCardB = () => {
                 <div className="title_c12 line-limit-2">
                     نام دسته بندی
                 </div>
-                <span>
+                <span hidden >
                     &#10095;
                 </span>
             </div>

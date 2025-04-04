@@ -1,5 +1,5 @@
 .home-content_1 {
-    margin-block: 1.5rem;
+    margin-block: 3rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -60,7 +60,7 @@
     padding: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(16.5rem , 1fr));
-    gap: 1rem;
+    gap: .5rem;
 }
 
 

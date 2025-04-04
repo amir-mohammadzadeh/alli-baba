@@ -8,7 +8,7 @@ const Example_imageList = new Array(10).fill().map((e, i) => {
     return { id: i+1, img: t }
 })
 
-export const ImageGallery = ({ productName, pID, className, onImgClick = undefined }) => {
+export const ImageGallery = ({ productName, pID, className='', onImgClick = undefined }) => {
     const [currentImage, setCurrentImage] = useState({})
     const imageContent_ref = useRef(null)
     //\______________ Data - Get Product Image list from API ____________//\ 

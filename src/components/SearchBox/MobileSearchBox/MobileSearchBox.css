@@ -1,0 +1,64 @@
+.mb-search-content_77{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.368);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+}
+
+.serach-input_77{
+    background-color: #ffffff;
+    height: 4rem;
+    padding: .5rem;
+}
+
+.back-btn_77{
+    align-self: stretch;
+    display: grid;
+    place-items: center;
+    padding-inline: .5rem;
+}
+
+:root[lang="fa"] .back-btn_77 {
+    transform: rotate(180deg);
+}
+
+.result-menu-mb_03{
+    flex-grow: 1;
+}
+.result-menu-mb_03 ul{
+    max-height: 100%;
+}
+
+.open-mb_03{
+    display: flex;
+}
+.open-mb_03 .serach-input_77{
+    animation: .3s openSearchBox forwards;
+}
+.open-mb_03 .result-menu-mb_03{
+    opacity: 0;
+    animation: .5s openResultBox forwards;
+}
+
+@keyframes openSearchBox {
+    from{
+        transform: translateY(-110%) scale(.8);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/*_________ Make Responcive _________*/
+@media screen and (max-width: 768px) {
+   .mb-search-content_77{
+        display: flex;
+   }
+}

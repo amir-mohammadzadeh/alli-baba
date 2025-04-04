@@ -2,27 +2,29 @@
     background-color: var(--white);
     border-radius: .25rem;
     padding: 1rem;
+    box-shadow: var(--shadow-2);
 }
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--border-line) ;
+    border-bottom: 1px solid var(--border-line-1) ;
 }
 .header h4{
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 3px solid var(--primary);
     height: 100%;
     margin: 0;
     padding-bottom: .5rem;
     padding-inline: 1rem;
-    
+    transform: translateY(2px);
+    border-radius: 2px;
 }
 
 .btn{
     background-color: var(--primary);
-    margin-bottom: .25rem;
     border-radius: .25rem;
     color: var(--white);
+    transform: translateY(-.25rem);
 }
 .header-btn_ss1:hover{
     background-color: var(--primary-2);

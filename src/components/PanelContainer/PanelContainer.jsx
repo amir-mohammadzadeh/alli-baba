@@ -15,9 +15,9 @@ export default PanelContainer
 export const PanelHeader = ({ headerTitle, headerBtn, butonText, buttonFunc }) => {
     return (
         <div className={`${style["header"]}`}>
-            <h5>
+            <h4>
                 {headerTitle}
-            </h5>
+            </h4>
             {headerBtn &&
                 <div className={`btn ${style["btn"]}`} onClick={buttonFunc}>
                     {butonText}

@@ -1,17 +1,45 @@
-import React, { useEffect, useState } from 'react'
+/*
+import './Header.css' // Code => 01
+import { Link, useMatch, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { BsPlusCircleDotted, BsGeoAlt, BsPersonCheckFill, BsPersonCircle, BsCart3, BsHeart } from "react-icons/bs";
+import { GoSync } from "react-icons/go";
+import SearchBox from '../SearchBox/SearchBox';
+import Navigation from '../Navigation/Navigation';
+import CartSideBar from '../Cart.SideBar/CartSideBar';
+import { openCityModal } from '../../redux/CityReducer/CitySlice';
+import { openCartMenu } from '../../redux/CartReducer/CartSlice';
+import CitySelectModal from '../CitySelectModal/CitySelectModal';
+
+
+*/
+
+
+import React, { useEffect, useRef, useState } from 'react'
 import Selection from '../Selection/Selection'
-import { BsCart3, BsChevronDown, BsHeart } from 'react-icons/bs'
+import { BsCart3, BsChevronDown, BsHeart, BsSearch } from 'react-icons/bs'
 import { GoSync } from "react-icons/go";
 import SearchBox from '../SearchBox/SearchBox'
 import './Header.css'//=> 01
 import Navigation from '../Navigation/Navigation';
 import { Link } from 'react-router';
-import MobileNavBar from '../MobileNavBar/MobileNavBar';
-import CartSideMenu from '../Cart.CartSideMenu/CartSideMenu';
+import { TomanCustomIcon } from '../../assets/Icon'
+//import MobileNavBar from '../MobileNavBar/MobileNavBar';
+//import CartSideMenu from '../Cart.CartSideMenu/CartSideMenu';
 import { ICONS, LOGO } from '../../assets/staticPaths';
+import MobileSearchBox from '../SearchBox/MobileSearchBox/MobileSearchBox';
+import SideBar from '../SideBar/SideBar';
+import MenuToggleButton from '../MenuToggleButton/MenuToggleButton';
+import { IoMenu } from 'react-icons/io5';
+import { CgMenu } from 'react-icons/cg';
+import SideMenu from '../Header.SideMenu/SideMenu';
 
 const Header = () => {
-
+    const cartMode = useRef('')
+    const [modalStatus, setModalStatus] = useState({
+        mobileSearch: false,
+        cart: false
+    })
     const [openCartModal, setCartModal] = useState(false);
 
     const exam = [
@@ -38,8 +66,8 @@ const Header = () => {
         {
             id: 1,
             title: 'تومان',
-            icon: ICONS + 'toman.svg',
-            iconType: 'img'
+            icon: <TomanCustomIcon size={20} />,
+            iconType: 'icon'
         },
         {
             id: 2,
@@ -73,6 +101,19 @@ const Header = () => {
         console.log(payload)
     };
 
+    const switchSearchBox = () => {
+        setModalStatus(prev => {
+            return { ...prev, mobileSearch: !prev.mobileSearch }
+        })
+    };
+    const switchCartSidebar = (e) => {
+
+        cartMode.current = e.currentTarget?.accessKey || '';
+        setModalStatus(prev => {
+            return { ...prev, cart: !prev.cart }
+        })
+    };
+
     return (<>
         <header className="header_01">
             <div className="container header-top_01">
@@ -86,11 +127,6 @@ const Header = () => {
                 </div>
 
                 <div className="selection_h01">
-                    <div className="btn header-btn_h01">
-                        <Link to="/pd" >
-                            ثبت فروشگاه
-                        </Link>
-                    </div>
                     <Selection
                         className="dropDown_h01"
                         value={exam2[0]}
@@ -123,37 +159,52 @@ const Header = () => {
                             <img src={LOGO + "logo.png"} alt="logo" />
                         </Link>
                     </div>
+
                     <SearchBox className="search-area_01" />
 
+
                     <div className="buttons_01">
-                        <div className="icon-btn_h01" onClick={() => setCartModal(true)}>
+
+                        <div className="icon-btn_h01 search-mbtn_01" onClick={switchSearchBox}>
                             <span className="icon_b01">
-                                <BsCart3 size={24} />
+                                <BsSearch size={24} />
+                            </span>
+                        </div>
+                        <div className="menu-toggle_01">
+                            <MenuToggleButton />
+                        </div>
+
+
+
+
+                        <div accessKey='CART' className="icon-btn_h01" onClick={switchCartSidebar}>
+                            <span className="icon_b01">
+                                <BsCart3 size={22} />
                             </span>
                             <span className="count_b01">
-                                0
+                                50
                             </span>
                             <sub>
                                 سبد خرید
                             </sub>
                         </div>
-                        <div className="icon-btn_h01">
+                        <div accessKey='FAV' className="icon-btn_h01" onClick={switchCartSidebar}>
                             <span className="icon_b01">
-                                <BsHeart size={24} />
+                                <BsHeart size={22} />
                             </span>
                             <span className="count_b01">
-                                0
+                                50
                             </span>
                             <sub>
                                 علاقه مندی
                             </sub>
                         </div>
-                        <div className="icon-btn_h01">
+                        <div accessKey='EXPOS' className="icon-btn_h01" onClick={switchCartSidebar}>
                             <span className="icon_b01">
-                                <GoSync size={24} />
+                                <GoSync size={22} />
                             </span>
                             <span className="count_b01">
-                                0
+                                5
                             </span>
                             <sub>
                                 مقایسه
@@ -162,14 +213,18 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <Navigation />
-            <MobileNavBar />
-            {openCartModal &&
-                <CartSideMenu onClose={() => setCartModal(false)} />
-            }
 
+            <Navigation showBaseMenu={true} />
 
         </header>
+
+        {modalStatus.mobileSearch &&
+            <MobileSearchBox closeBox={switchSearchBox} />
+        }
+
+        {modalStatus.cart &&
+            <SideBar onClose={switchCartSidebar} mode={cartMode.current} />
+        }
 
     </>)
 }

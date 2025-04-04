@@ -25,7 +25,7 @@
 .detailes-content_07 hr {
     margin-block: .75rem;
     border: 0;
-    border-top: 1px solid var(--border-line);
+    border-top: 1px solid var(--border-line-1);
 }
 
 .title_d07 {
@@ -63,7 +63,7 @@
 }
 
 .msg-btn_07 {
-    background-color: var(--primary-light);
+    background-color: var(--primary-xlight);
     color: var(--primary-dark);
     display: flex;
 }
@@ -110,7 +110,7 @@
 }
 
 .cart-btn_07 {
-    background-color: var(--primary-light);
+    background-color: var(--primary-xlight);
     color: var(--primary-dark);
     display: flex;
     align-items: center;

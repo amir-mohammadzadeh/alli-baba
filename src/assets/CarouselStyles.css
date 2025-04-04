@@ -26,10 +26,11 @@
     padding-left: var(--slide-spacing);
 }
 
+._image_ci picture ,
 ._image_ci img {
     width: 100%;
+    display: block;
     height: auto;
-    aspect-ratio: 8/3;
     object-fit: cover;
 }
 
@@ -44,23 +45,25 @@
     background-color: #ffffff99;
     width: 3rem;
     height: 3rem;
+    border: 0;
+    border-radius: 50% ;
+    top: calc(50% - 1.5rem);
+    font-size: 1.5rem;
     display: grid;
     place-items: center;
-    border: 0;
-    border-radius: 50%;
-    top: calc(50% - 1.5rem);
-    z-index: 2;
     color: #000000;
 }
+
 .slider_button:not(:disabled):hover{
     background-color: #ffffff;
+    cursor: pointer;
 }
 
 .slider_button--next {
-    right: .25rem;
+    left: .25rem;
 }
 .slider_button--prev {
-    left: .25rem;
+    right: .25rem;
 }
 
 .slider_button:disabled{
@@ -77,17 +80,17 @@
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    z-index: 2;
 }
 
 .carousel__dot {
+    flex-shrink: 0;
     width: 10px;
     height: 10px;
-    background-color: var(--white);
+    background-color: #ffffff90;
     border: 0;
     border-radius: 20px;
     opacity: .8;
-    transition: .3s;
+    transition: .2s ease-in-out;
 }
 .carousel__dot:hover{
     cursor: pointer;
@@ -96,6 +99,7 @@
 
 .carousel__dot--selected {
     opacity: 1;
+    width: 25px;
     background-color: var(--primary);
 }
 

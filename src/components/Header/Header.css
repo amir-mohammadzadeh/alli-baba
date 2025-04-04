@@ -38,7 +38,7 @@
     --border-soft: transparent;
     --main-height: 1.5rem;
     padding-bottom: 0;
-    border-right: 1px solid var(--border-line);
+    border-right: 1px solid var(--border-line-1);
     padding-inline-start: .25rem;
 }
 
@@ -48,7 +48,7 @@
 
 .signup_h01 {
     padding-inline-start: .5rem;
-    border-left: 1px solid var(--border-line);
+    border-left: 1px solid var(--border-line-1);
 }
 
 .header-btn_h01 {
@@ -61,9 +61,9 @@
 }
 
 .header-content_01 {
-    border-top: 1px solid var(--border-line);
-    border-bottom: 1px solid var(--border-line);
-    padding: 1rem 0;
+    border-top: 1px solid var(--border-line-1);
+    border-bottom: 1px solid var(--border-line-1);
+    padding-block: .75rem 0;
 }
 
 .midel-header_01 {
@@ -79,6 +79,7 @@
 }
 
 .logo-box_01 img {
+    display: block;
     width: 100%;
     object-fit: cover;
 }
@@ -90,6 +91,165 @@
     justify-self: flex-end;
     margin: 0;
 }
+
+.buttons_01 {
+    flex: 0 0 17rem;
+    max-width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.icon-btn_h01 {
+    position: relative;
+    transition: .3s;
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.icon-btn_h01:hover {
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.count_b01 {
+    --size: 1.4rem ;
+    position: absolute;
+    inset: -45% auto -85% auto;
+    text-align: center;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 2rem;
+    line-height: 1.4rem;
+    font-size: .8rem;
+}
+.search-mbtn_01{
+    display: none;
+    background-color: var(--primary);
+    padding: .35rem;
+    aspect-ratio: 1;
+    line-height: 0;
+    border-radius: 30%;
+    color: var(--white);
+    box-shadow: var(--shadow-2);
+}
+.search-mbtn_01:hover{
+    color: var(--white);
+    box-shadow: none ;
+}
+.menu-toggle_01{
+    display: none;
+}
+
+/*_________ Make Responcive _________*/
+@media screen and (max-width:992px) {
+    .header-top_01 {
+        justify-content: start;
+        font-size: .9rem;
+    }
+
+    :root[lang="fa"] .header-top_01 {
+        justify-content: end;
+    }
+
+    .header-btn_h01 {
+        font-size: .9rem;
+    }
+    .selection_h01 .selection-head_02{
+        height: 2.25rem;
+    }
+
+    .logo-box_01{
+        max-width: 6rem;
+    }
+
+    .buttons_01{
+        max-width: max-content;
+    }
+    .signup-content_01 ,
+    .buttons_01 .icon-btn_h01:nth-child(3) {
+        display: none;
+    }
+    
+    .search-area_01 {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .search-area_01 {
+        display: none;
+    }
+    .count_b01 {
+        inset: -35% auto -85% auto;
+        width: 1.35rem;
+        height: 1.35rem;
+        line-height: 1.35rem;
+    }
+    .header-content_01 {
+        padding-block: .5rem;
+    }
+    .midel-header_01{
+        padding-inline: 1.5rem;
+    }
+    .menu-toggle_01,
+    .search-mbtn_01{
+        display: block;
+    }
+    .buttons_01 .icon-btn_h01:nth-child(4),
+    .buttons_01 .icon-btn_h01:nth-child(5) {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+.Header_01 {
+    height: auto;
+    padding: 2rem 1rem .5rem 1rem;
+    background-color: var(--white);
+    box-shadow: 0 1px 15px 1px var(--shadow-color-1);
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo_01 {
+    width: 10rem;
+    flex-shrink: 0;
+}
+
+.header-logo_01 img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 160/40;
+}
+
+.search-box_01 {
+    --input-height: 3rem;
+    --input-radius: 3rem;
+    width: 30%;
+}
+
 
 .buttons_01 {
     flex: 0 0 17rem;
@@ -125,43 +285,109 @@
     font-size: .85rem;
 }
 
-/*_________ Make Responcive _________*/
+.header-button-group {
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: .5rem;
+}
+
+.button_01 {
+    padding: .5rem 1rem;
+    height: 3rem;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+    color: var(--gray-600);
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 2px 4px 2px var(--shadow-color-2);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.button_01 .title_01 {
+    font-size: 1.2rem;
+    transform: translateY(-2px);
+}
+
+.city-selector_01 .title_01 {
+    font-size: 1rem;
+}
+
+.city-selector_01:has(.bg-red_01) {
+    color: var(--red-600);
+    font-weight: bold;
+}
+
+.counter_01 {
+    height: auto;
+    min-width: 1.6rem;
+    padding: .25rem;
+    border-radius: 1rem;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    background-color: var(--primary);
+    font-size: .9rem;
+}
+
+/*______________________________________ RESPONCIVE ________________*/
+/*
 @media screen and (max-width:992px) {
-    .header-top_01 {
-        justify-content: start;
-        font-size: .9rem;
+    .Header_01 {
+        padding: .5rem;
+        position: sticky;
+        top: 0;
+        z-index: 12;
+    }
+    .header_container{
+        gap: .5rem;
+    }
+    .header_hide {
+        padding: 0 !important;
     }
 
-    :root[lang="fa"] .header-top_01 {
-        justify-content: end;
-    }
-
-    .header-btn_h01 {
-        font-size: .9rem;
-    }
-    .selection_h01 .selection-head_02{
-        height: 2.25rem;
-    }
-
-    .signup-content_01 {
+    .header_hide>.header_container {
         display: none;
     }
 
-    .buttons_01 {
+    .header-button-group {
+        flex-grow: 0;
+        width: max-content;
+        justify-content: unset;
+    }
+
+    .button_01:nth-child(1),
+    .button_01:nth-child(2){
         display: none;
     }
 
-    .search-area_01 {
-        max-width: 60%;
+    .search-box_01 {
+        width: 100%;
+        flex-grow: 1;
     }
 }
 
 @media screen and (max-width:768px) {
-    .buttons_01 {
+    .Header_01 {
+        box-shadow: 0 1px 15px 1px var(--shadow-color-2);
+    }
+    .header-logo_01 {
+        width: 8rem;
+    }
+    .search-box_01 {
+        --input-radius: .5rem;
+        flex-grow: 0;
+ 
+    }
+
+    .button_01:nth-child(4){
         display: none;
     }
 
-    .search-area_01 {
-        max-width: 100%;
-    }
-}
+}*/

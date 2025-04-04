@@ -1,5 +1,5 @@
 .price-content {
-    color: var(--text-light);
+    color: var(--primary);
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -7,7 +7,6 @@
 }
 
 .price {
-    color: var(--primary);
     font-size: 1em;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
@@ -15,12 +14,13 @@
 
 .price-content span[id="Price_Label"] {
     font-size: 1rem;
+    color: var(--text-light);
 }
 
 .price sub {
     color: var(--text-light);
     font-weight: normal;
-    font-size: .7em;
+    font-size: .8em;
     margin-inline-start: .5rem;
 }
 
@@ -31,9 +31,5 @@
 @media screen and (max-width: 768px) {
     .price-content {
         font-size: 1.3rem;
-    }
-
-    .price sub {
-        font-size: .5em;
     }
 }

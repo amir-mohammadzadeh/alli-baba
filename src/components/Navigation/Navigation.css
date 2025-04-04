@@ -34,3 +34,9 @@
     transform:  var(--br) ;
     transform-origin: 100% ;
 }
+
+@media screen and (max-width: 768px) {
+    .navbar_05{
+        display: none;
+    }
+}

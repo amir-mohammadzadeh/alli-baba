@@ -10,7 +10,7 @@
     padding: 1rem;
 }
 .header_08 small{
-    border-bottom: 1px solid var(--border-line);
+    border-bottom: 1px solid var(--border-line-1);
     color: var(--text-label);
 }
 .icon_h08{
@@ -35,7 +35,7 @@
 .footer_08{
     margin-top: .5rem;
     padding: .5rem 0rem;
-    border-top: 1px solid var(--border-line);
+    border-top: 1px solid var(--border-line-1);
     position: relative;
 }
 

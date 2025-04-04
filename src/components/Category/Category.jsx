@@ -12,7 +12,6 @@ const Category = () => {
             container.current.style.setProperty('--panel-width', parentWidth + "px")
         };
 
-
         return (<>
             <li onMouseOver={setSubMenuWidth}>
                 <div className="item_l06">
@@ -33,13 +32,13 @@ const Category = () => {
         <div ref={container} className="category-content_06">
             <div className="panel_06">
                 <div className="header_06">
-                    <span className="h5">
+                    <span className="h5 mb-0">
                         دسته بندی ها
                     </span>
-                    <span>
+                    <small hidden>
                         مشاهده همه
                         &#10095;
-                    </span>
+                    </small>
                 </div>
                 <ul className="cate-list_06">
                     <PanelItem title="دسته اول" />

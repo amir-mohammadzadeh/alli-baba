@@ -139,6 +139,7 @@
         flex-direction: column-reverse;
         max-width: 24rem;
         gap: .5rem;
+        margin-inline: auto;
     }
     .content_ig2{
         flex-direction: row;

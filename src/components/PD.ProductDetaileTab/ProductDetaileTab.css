@@ -5,7 +5,7 @@
     gap: 1rem;
     padding: 0 1rem;
     margin-bottom: .5rem;
-    border-bottom: 1px solid var(--border-line);
+    border-bottom: 1px solid var(--border-line-1);
     max-width: 100%;
     user-select: none;
     -webkit-user-select: none;

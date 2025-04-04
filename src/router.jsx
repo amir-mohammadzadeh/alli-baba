@@ -2,6 +2,7 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home/Home";
 import ProductDetailes from "./pages/ProductDetailes/ProductDetailes";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
 const routes = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const routes = createBrowserRouter([
             {
                 path: 'pd',
                 element: <ProductDetailes /> 
+            },
+            {
+                path: 'category',
+                element: <CategoryPage /> 
             },
         ]
     },
